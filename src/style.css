@@ -1,0 +1,28 @@
+.game{
+    text-align: center;
+}
+
+.btn{
+    margin-top: 25px;
+}
+
+.live{
+    margin: 20px 0;
+}
+
+
+.account{
+    display: flex;
+    justify-content: center;
+}
+.player{
+    margin-right: 25px;
+}
+
+.new-game{
+    margin: 15px 15px;
+}
+
+.game h2{
+    margin: unset;
+}
