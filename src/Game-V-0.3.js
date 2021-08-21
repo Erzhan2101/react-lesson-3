@@ -67,15 +67,14 @@ const GameV03 = () => {
             </div>
             <input className='guess' onChange={randomGuess} value={guess} type='number' placeholder='Введите число'/>
             <button className='prompt' onClick={prompt} >Подсказка</button>
-
-            {
-                Boolean(freeAttempt) &&
-                    <p className='live'>У вас осталось {freeAttempt} {freeAttempt === 1 ? "попытка" : "попытки" }</p>
-            }
             <div>
                 <button className='checkBtn' onClick={checkBtn} disabled={!freeAttempt}>CHECK</button>
                 <button className="new-game" onClick={newGame} >NEW GAME</button>
                 <button className='clear-all' onClick={clearAll}>CLEAR ALL</button>
+                {
+                    Boolean(freeAttempt) &&
+                    <p className='live'>У вас осталось {freeAttempt} {freeAttempt === 1 ? "попытка" : "попытки" }</p>
+                }
                 <div className='message'>{message}</div>
             </div>
         </div>
