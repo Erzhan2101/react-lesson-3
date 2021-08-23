@@ -7,6 +7,8 @@ const GameV03 = () => {
     const [freeAttempt, setFreeAttempt] = useState(3)
     const [player, setPlayer] = useState(localStorage.getItem("Player") || 0)
     const [computer, setComputer] = useState(localStorage.getItem("Computer") || 0)
+    const [percent, setPercent] = useState(0)
+    const [isTrue, setIsTrue] = useState(true)
 
     const randomGuess = (e) => {
         setGuess(e.target.value)
@@ -27,18 +29,26 @@ const GameV03 = () => {
 
     const checkBtn = () => {
         setFreeAttempt(freeAttempt - 1)
-        setGuess('')
+        setFreeAttempt(0)
     }
+
+    useEffect(() => {
+        if (guess !== '') {
+            setIsTrue(false)
+        }
+    }, [guess])
 
     useEffect(() => {
         if (random === +guess) {
             setMessage('Поздравляю вы угадали число!')
             setPlayer(+player + 1)
             setFreeAttempt(0)
+            setPercent(percent + 1)
 
         } else if (random !== +guess && freeAttempt === 0) {
             setMessage('Увы вы не угадали число !')
             setComputer(+computer + 1)
+
         }
     }, [freeAttempt])
 
@@ -70,11 +80,13 @@ const GameV03 = () => {
             <div className='account'>
                 <h5 className='player'>Игрок: {player}</h5>
                 <h5 className='comp'>Компьютер: {computer}</h5>
+                {/*<h5 className='percent'>Процент побед: {Math.round(player/percent)*100} %</h5>*/}
+                <h5 className='percent'>Процент побед: {percent} %</h5>
             </div>
             <input className='guess' onChange={randomGuess} value={guess} type='number' placeholder='Введите число'/>
             <button className='prompt' disabled={!freeAttempt} onClick={prompt}>Подсказка</button>
             <div>
-                <button className='checkBtn' onClick={checkBtn} disabled={!freeAttempt}>CHECK</button>
+                <button className='checkBtn' onClick={checkBtn} disabled={isTrue}>CHECK</button>
                 <button className="new-game" onClick={newGame}>NEW GAME</button>
                 <button className='clear-all' onClick={clearAll}>Start all over again</button>
                 {

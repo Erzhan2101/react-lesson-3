@@ -39,6 +39,14 @@ body {
     color: red;
 }
 
+.percent{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 10px;
+    color: #3a843a;
+    margin-left: 25px;
+
+}
+
 .guess {
     background-color: #FFBBEC;
     border: 1px solid #a1a1f3;
