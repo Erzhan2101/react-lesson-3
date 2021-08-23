@@ -1,0 +1,8 @@
+@media (max-width: 1440px) {
+}
+@media (max-width: 480px) {
+    body{
+        height: 60vh;
+    }
+
+}

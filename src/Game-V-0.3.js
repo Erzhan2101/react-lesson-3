@@ -20,12 +20,14 @@ const GameV03 = () => {
             setMessage('недобор')
         } else if (random < +guess) {
             setMessage('перебор')
+        } else if (random === +guess) {
+            setMessage("вы угадали нажмите CHECK чтобы выиграть")
         }
     }
 
-
     const checkBtn = () => {
         setFreeAttempt(freeAttempt - 1)
+        setGuess('')
     }
 
     useEffect(() => {
@@ -56,30 +58,34 @@ const GameV03 = () => {
         localStorage.clear()
         setPlayer(0)
         setComputer(0)
+        setRandom(Math.round(Math.random() * 10))
+        setGuess("")
+        setMessage("")
+        setFreeAttempt(3)
     }
 
     return (
-        <div className='game ' >
+        <div className='game '>
             <h2 className='title'>Угадай число с 3 попыток</h2>
             <div className='account'>
                 <h5 className='player'>Игрок: {player}</h5>
                 <h5 className='comp'>Компьютер: {computer}</h5>
             </div>
             <input className='guess' onChange={randomGuess} value={guess} type='number' placeholder='Введите число'/>
-            <button className='prompt' onClick={prompt} >Подсказка</button>
+            <button className='prompt' disabled={!freeAttempt} onClick={prompt}>Подсказка</button>
             <div>
                 <button className='checkBtn' onClick={checkBtn} disabled={!freeAttempt}>CHECK</button>
-                <button className="new-game" onClick={newGame} >NEW GAME</button>
-                <button className='clear-all' onClick={clearAll}>CLEAR ALL</button>
+                <button className="new-game" onClick={newGame}>NEW GAME</button>
+                <button className='clear-all' onClick={clearAll}>Start all over again</button>
                 {
                     Boolean(freeAttempt) &&
-                    <p className='live'>У вас осталось {freeAttempt} {freeAttempt === 1 ? "попытка" : "попытки" }</p>
+                    <p className='live'>У вас есть {freeAttempt} {freeAttempt === 1 ? "попытка" : "попытки"} чтобы
+                        угадать цифру</p>
                 }
                 <div className='message'>{message}</div>
             </div>
         </div>
     )
-
 }
 
 export default GameV03
