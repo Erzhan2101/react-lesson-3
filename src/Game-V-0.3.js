@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useState} from "react";
 
 const GameV03 = () => {
     const [random, setRandom] = useState(Math.round(Math.random() * 10))
@@ -26,19 +26,15 @@ const GameV03 = () => {
             setMessage("вы угадали нажмите CHECK чтобы выиграть")
         }
     }
+    
 
     const checkBtn = () => {
         setFreeAttempt(freeAttempt - 1)
-        setFreeAttempt(0)
-    }
 
-    useEffect(() => {
         if (guess !== '') {
             setIsTrue(false)
         }
-    }, [guess])
 
-    useEffect(() => {
         if (random === +guess) {
             setMessage('Поздравляю вы угадали число!')
             setPlayer(+player + 1)
@@ -50,7 +46,18 @@ const GameV03 = () => {
             setComputer(+computer + 1)
 
         }
-    }, [freeAttempt])
+
+        localStorage.setItem('Computer', computer)
+        localStorage.setItem('Player', player)
+
+    }
+
+
+
+
+
+
+
 
     const newGame = () => {
         setRandom(Math.round(Math.random() * 10))
@@ -58,11 +65,6 @@ const GameV03 = () => {
         setMessage("")
         setFreeAttempt(3)
     }
-
-    useEffect(() => {
-        localStorage.setItem('Computer', computer)
-        localStorage.setItem('Player', player)
-    }, [message])
 
     const clearAll = () => {
         localStorage.clear()
@@ -72,6 +74,7 @@ const GameV03 = () => {
         setGuess("")
         setMessage("")
         setFreeAttempt(3)
+        setIsTrue(true)
     }
 
     return (

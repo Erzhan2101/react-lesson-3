@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4004d5b1-ec5e-4118-ac67-f94f11a17dfd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GG.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game-V-0.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game-V-0.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-lesson-2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,7 +55,8 @@
       <updated>1629371664773</updated>
       <workItem from="1629371666722" duration="12559000" />
       <workItem from="1629451271437" duration="18029000" />
-      <workItem from="1629484049433" duration="29097000" />
+      <workItem from="1629484049433" duration="31130000" />
+      <workItem from="1629720400988" duration="1371000" />
     </task>
     <servers />
   </component>
