@@ -1,4 +1,4 @@
-import { useState} from "react";
+import {useEffect, useState} from "react";
 
 const GameV03 = () => {
     const [random, setRandom] = useState(Math.round(Math.random() * 10))
@@ -47,12 +47,12 @@ const GameV03 = () => {
 
         }
 
-        localStorage.setItem('Computer', computer)
-        localStorage.setItem('Player', player)
-
     }
 
-
+    useEffect(() => {
+        localStorage.setItem('Computer', computer)
+        localStorage.setItem('Player', player)
+    }, [computer, message, player])
 
 
 
