@@ -1,9 +1,10 @@
 import data from "./data";
-import React, {useState} from "react";
+import {useState} from "react";
 
 const Data = () => {
 
     const [users, setUsers] = useState(data)
+
 
     return (
         <div>

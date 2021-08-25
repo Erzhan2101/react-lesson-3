@@ -151,3 +151,21 @@ body {
 
 
 
+/* ================ */
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    background: #303049;
+}
+
+.nav-link{
+    margin-left: 20px;
+    color: #fff;
+}

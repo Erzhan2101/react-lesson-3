@@ -26,15 +26,25 @@ const GameV03 = () => {
             setMessage("вы угадали нажмите CHECK чтобы выиграть")
         }
     }
-    
+
 
     const checkBtn = () => {
         setFreeAttempt(freeAttempt - 1)
+    }
 
+    useEffect(() => {
+        localStorage.setItem('Computer', computer)
+        localStorage.setItem('Player', player)
+    }, [message])
+
+    useEffect(() => {
         if (guess !== '') {
             setIsTrue(false)
         }
+    }, [guess])
 
+
+    useEffect(() => {
         if (random === +guess) {
             setMessage('Поздравляю вы угадали число!')
             setPlayer(+player + 1)
@@ -46,35 +56,21 @@ const GameV03 = () => {
             setComputer(+computer + 1)
 
         }
-
-    }
-
-    useEffect(() => {
-        localStorage.setItem('Computer', computer)
-        localStorage.setItem('Player', player)
-    }, [computer, message, player])
-
-
-
-
-
+    }, [freeAttempt])
 
     const newGame = () => {
         setRandom(Math.round(Math.random() * 10))
         setGuess("")
         setMessage("")
         setFreeAttempt(3)
+        setIsTrue(true)
     }
 
     const clearAll = () => {
         localStorage.clear()
         setPlayer(0)
         setComputer(0)
-        setRandom(Math.round(Math.random() * 10))
-        setGuess("")
-        setMessage("")
-        setFreeAttempt(3)
-        setIsTrue(true)
+        newGame()
     }
 
     return (
